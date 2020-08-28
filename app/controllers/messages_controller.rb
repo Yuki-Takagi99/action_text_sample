@@ -69,6 +69,6 @@ class MessagesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def message_params
-      params.fetch(:message, {})
+      params.require(:message).permit(:content)
     end
 end
